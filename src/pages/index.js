@@ -1,0 +1,9 @@
+export { default as Dashboard } from './Dashboard.jsx';
+export { default as Layout } from './Layout.jsx';
+export { default as Login } from './Login.jsx';
+export { default as Succesfulshipments } from './Succesfulshipments.jsx';
+export { default as Activities } from './Activities.jsx';
+export { default as DestinationTracking } from './DestinationTracking.jsx';
+export { default as SearchResults } from './SearchResults.jsx';
+export { default as ViewInMap } from './ViewInMap.jsx';
+export { default as ClickToView } from './ClickToView.jsx';
