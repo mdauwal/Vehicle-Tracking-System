@@ -3,8 +3,8 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div className="flex flex-col h-screen justify-between">
-      <main className="w-full">
+    <div className="flex flex-col h-screen justify-between bg-[#FAFAFA]">
+      <main className="w-full ">
         <div className="flex items-center justify-center">
           <div className="border bg-slate-200 w-full">
             <div className="flex gap-2 w-full">
