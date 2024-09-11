@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'CircularSTD';
+  font-display: swap;
+  src: url(/public/assets/fonts/circularstd.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-display: swap;
+  src: url(/public/assets/fonts/AvenirLTStd.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'DMsans';
+  font-display: swap;
+  src: url(/public/assets/fonts/DMSans.ttf) format('ttf');
+}
