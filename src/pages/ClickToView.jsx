@@ -8,7 +8,7 @@ import PlateNumberImage from '../../src/assets/images/image-plate-number.png'
 
 const ClickToView = () => {
   return (
-    <div className='container grid grid-cols-5'>
+    <div className=' grid grid-cols-5'>
       {/* <h1 className="font-Dmsans">Track Activities</h1>
         <h1 className="font-Circularstd">Track Activities</h1>
         <h1 className="font-Avenir">Track Activities</h1> */}
@@ -60,10 +60,9 @@ const ClickToView = () => {
               <p className='font-Avenir text-[#6B778C]'>	Reported: Nov 14, 	03:37:25 am</p>
             </div>
           </div>
-
         </div>
-
       </div>
+
       <div className='col-span-4 p-5'>
         <Link to={'someplace'} className='flex items-center gap-2'><FaArrowLeft /> Back </Link>
 
@@ -72,7 +71,7 @@ const ClickToView = () => {
           <button className="btn btn-primary bg-[#1633A3] rounded">Contact Driver</button>
         </div>
 
-        <div className="container grid grid-cols-1 md:grid-cols-3 gap-3 mt-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-5">
           <div className='col-span-2'>
             <img src={CurrentLocationImage} alt="Current Location" className='w-full' />
           </div>
@@ -88,33 +87,33 @@ const ClickToView = () => {
           </div>
         </div>
 
-        <div className='container grid grid-cols-1 md:grid-cols-2 gap-3 mt-3'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-3 mt-5'>
           <div className="card bg-base-100 w-full shadow-xl p-5 col-span-1">
             <h3 className='text-black font-Avenir font-bold mb-5 text-[1.5rem]'>Incidence Report</h3>
 
             <span className='flex justify-between mb-3'>
               <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Place of Incident</p>
-              <p className='text-[#6B778C] font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Jaji - Zaria</p>
+              <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Jaji - Zaria</p>
             </span>
 
             <span className='flex justify-between mb-3'>
               <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Date & Time</p>
-              <p className='text-[#6B778C] font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Nov 14, 03:37:25 am</p>
+              <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Nov 14, 03:37:25 am</p>
             </span>
 
             <span className='flex justify-between mb-3'>
               <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Truck Route</p>
-              <p className='text-[#6B778C] font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Federal Highway</p>
+              <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Federal Highway</p>
             </span>
 
             <span className='flex justify-between mb-3'>
               <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Truck Content</p>
-              <p className='text-[#6B778C] font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Alcohol</p>
+              <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Alcohol</p>
             </span>
 
             <span className='flex justify-between mb-3'>
               <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Status</p>
-              <p className='text-[#6B778C] font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Still in Danger</p>
+              <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Still in Danger</p>
             </span>
 
           </div>
@@ -122,27 +121,27 @@ const ClickToView = () => {
           <div className="card bg-base-100 w-full shadow-xl p-5 col-span-1">
             <h3 className='text-black font-Avenir font-bold mb-5 text-[1.5rem]'>Driver’s Information</h3>
 
-            <span className='grid grid-cols-3 gap-3 mb-5'>
-              <div className="avatar col-span-1 border-r-2 flex justify-center">
+            <span className='grid grid-cols-1 md:grid-cols-3 gap-3 mb-5'>
+              <div className="avatar col-span-1 md:border-r-2 flex justify-center">
                 <div className="w-24 rounded-full">
-                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt=''/>
+                  <img src={PersonImage} alt=''/>
                 </div>
               </div>
-              <div className='col-span-2'>
-                <p className='text-[#6B778C] font-Avenir text-[1.25rem]'>William O. Johnson</p>
-                <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Membership ID: Wil97190</p>
-                <p className='text-[#6B778C] font-Avenir text-[.875rem]'>License: Class A</p>
+              <div className='col-span-2 p-3 text-center md:text-left'>
+                <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>William O. Johnson</p>
+                <p className='text-[#6B778C] font-Avenir text-[.875rem] mt-2'>Membership ID: <span className='font-semibold'>Wil97190</span></p>
+                <p className='text-[#6B778C] font-Avenir text-[.875rem] mt-2'>License: <span className='font-semibold'>Class A</span></p>
               </div>
             </span>
 
-            <span className='flex justify-between'>
+            <span className='flex justify-between mb-3'>
               <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Email</p>
-              <p className='text-[#6B778C] font-Avenir text-[1.25rem]'>Willjohn@gmail.com</p>
+              <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>Willjohn@gmail.com</p>
             </span>
 
             <span className='flex justify-between'>
               <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Phone Number</p>
-              <p className='text-[#6B778C] font-Avenir text-[1.25rem]'>09123456789</p>
+              <p className='font-Avenir text-[1.25rem] text-[#091E42] font-bold'>09123456789</p>
             </span>
 
           </div>
