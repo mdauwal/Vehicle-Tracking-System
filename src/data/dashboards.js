@@ -1,7 +1,7 @@
 const dashboardData = {
   shipments: {
-    successfulShipments: 5600,
-    shipmentsOnRoute: 1922,
+    successfulShipments: `5,600`,
+    shipmentsOnRoute: `1,922`,
     numberOfIncidents: 124,
     seizedShipments: 102,
     totalShipments: {
@@ -13,7 +13,7 @@ const dashboardData = {
       state: 677,
       securityIncidents: 1024,
     },
-    riskAssessments: 14, // In percentage
+    riskAssessments: [14, 27], // In percentage
   },
   truckDrivers: {
     totalDrivers: 1536,
@@ -26,7 +26,7 @@ const dashboardData = {
     availableTL: 179,
     unavailableTL: 394,
   },
-  timeFrames: ['November', 'December', 'January'], // Dropdown options for months
+  timeFrames: ["November", "December", "January"], // Dropdown options for months
 };
 
 export default dashboardData;
