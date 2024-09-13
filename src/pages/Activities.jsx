@@ -48,7 +48,7 @@ const Activities = () => {
         <h1 className="font-Avenir text-3xl font-extrabold text-[#000000]">
           Track Activities
         </h1>
-        <h2 className="font-DMsans font-normal text-lg text-[#303236]">
+        <h2 className="font-Dmsans font-normal text-xl text-[#303236]">
           Make informed decisions, stay ahead of security risks.
         </h2>
 
