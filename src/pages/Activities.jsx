@@ -96,8 +96,8 @@ const Activities = () => {
                 <dialog id="my_modal_2" className="modal">
                   <div className="modal-box">
                     <div className="flex items-start justtify-between">
-                      <div className="w-1/2 bg-slate-300 flex flex-col items-start justify-start">
-                        <div className="w-full flex bg-red-400">
+                      <div className="w-1/2 flex flex-col items-start justify-start">
+                        <div className="w-full flex">
                           <svg xmlns="http://www.w3.org/2000/svg">
                             <path
                               d={currentState?.svg}
@@ -109,16 +109,56 @@ const Activities = () => {
 
                         <div className="flex flex-col items-start justify-start">
                           <h1>Total Reported Cases</h1>
-                          <CircularProgressbar
-                            value={0.66}
-                            maxValue={1}
-                            text={`80021 Reported Cases`}
-                          />
-                          ;
+
+                          <div className="flex items-start justify-between gap-4">
+                            <CircularProgressbar
+                              value={0.66}
+                              maxValue={1}
+                              text={80021}
+                              background="red"
+                            />
+
+                            <div className="flex items-start justify-start flex-col">
+                              {[
+                                { name: 'Rubber', count: '4,102' },
+                                { name: 'Road Disturbance', count: '1,102' },
+                                { name: 'Car Jacking', count: '2,102' },
+                                { name: 'Customs', count: '102' },
+                              ].map((item) => {
+                                return (
+                                  <div className="flex items-start justify-start">
+                                    <div className="w-5 h-1 bg-red-500" />
+                                    <div className="flex flex-col items-start justify-start">
+                                      <span>{item.name}</span>
+                                      <span>{item.count}</span>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div className="w-1/2 bg-red-500">
-                        {currentState?.state || ''}
+                        {/* currentState?.state || '' */}
+                        <svg
+                          viewBox="0 0 100 100"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10,10 L90,10 L90,90 L10,90 Z"
+                            fill="#008751"
+                          />
+                          <text
+                            x="50"
+                            y="55"
+                            font-size="10"
+                            text-anchor="middle"
+                            fill="white"
+                          >
+                            Kaduna
+                          </text>
+                        </svg>
                       </div>
                     </div>
                   </div>
