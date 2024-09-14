@@ -113,7 +113,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer className="footer footer-center bg-white text-base-content p-4 border">
+      <footer className="footer fixed bottom-0 left-0 footer-center bg-white text-base-content p-4 border">
         <aside>
           <p>
             Copyright © {new Date().getFullYear()} - All right reserved by ACME
