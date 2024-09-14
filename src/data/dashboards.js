@@ -13,7 +13,7 @@ const dashboardData = {
       state: 677,
       securityIncidents: 1024,
     },
-    riskAssessments: [14, 27], // In percentage
+    riskAssessments: 14, // In percentage
   },
   truckDrivers: {
     totalDrivers: 1536,
