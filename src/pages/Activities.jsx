@@ -115,7 +115,6 @@ const Activities = () => {
                               value={0.66}
                               maxValue={1}
                               text={80021}
-                              background="red"
                             />
 
                             <div className="flex items-start justify-start flex-col">
@@ -126,11 +125,15 @@ const Activities = () => {
                                 { name: 'Customs', count: '102' },
                               ].map((item) => {
                                 return (
-                                  <div className="flex items-start justify-start">
-                                    <div className="w-5 h-1 bg-red-500" />
+                                  <div className="flex items-start justify-start gap-4">
+                                    <div className="w-6 h-1 mt-3 bg-red-500" />
                                     <div className="flex flex-col items-start justify-start">
-                                      <span>{item.name}</span>
-                                      <span>{item.count}</span>
+                                      <span className="text-nowrap font-Avenir font-normal text-[#5E6C84] text-sm">
+                                        {item.name}
+                                      </span>
+                                      <span className="text-nowrap font-Avenir font-extrabold text-[#11263C] text-xs">
+                                        {item.count}
+                                      </span>
                                     </div>
                                   </div>
                                 );
