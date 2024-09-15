@@ -3,7 +3,13 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Avenir: ['Avenir'],
+        CircularSTD: ['CircularSTD'],
+        DMsans: ['DMsans'],
+      },
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {
