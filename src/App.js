@@ -11,6 +11,7 @@ import {
   ViewInMap,
 } from './pages';
 import SuccesfulShipments from './pages/Succesfulshipments';
+import Decision from './pages/decision';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/succesful-shipments" element={<SuccesfulShipments />} />
           <Route path="/login" element={<Login />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/decisions" element={<Decision />} />
           <Route
             path="/destination-tracking"
             element={<DestinationTracking />}
