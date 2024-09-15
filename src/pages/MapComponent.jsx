@@ -66,7 +66,7 @@ function MapComponent({ onLocationSelected = () => {} }) {
 
   return (
     <div className="relative">
-      <div id="map" className="w-full h-full"></div>
+      <div id="map" className="w-full h-90vh"></div>
   
       <Link
         to="/search-route"

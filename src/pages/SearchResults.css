@@ -1,25 +1,32 @@
 .search-result-container {
   display: flex;
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
 }
 
-/* Sidebar width for large screens */
-.search-result-container > *:first-child {
-  flex: 0 0 35%; /* Sidebar width */
+.sidebar-container {
+  flex: 0 0 35%;
   max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
 }
 
-.search-result-container > *:last-child {
-  flex: 1; /* Ensure the map takes the remaining space */
-  height: 100%;
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50; /* Appears below sidebar but above map */
 }
 
-/* Toggle Button Styles */
+/* Button styling */
 .sidebar-toggle-btn {
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 1000;
+  z-index: 101;
   background-color: #007bff;
   color: white;
   padding: 10px 15px;
@@ -32,30 +39,19 @@
   background-color: #0056b3;
 }
 
-#map {
-  width: 100%;
-  height: 100vh; /* Ensure the map takes the full height */
-}
-
+/* Map takes full width on small screens */
 @media (max-width: 1024px) {
-  /* Hide the Sidebar on tablet/mobile */
-  .search-result-container > *:first-child {
+  .search-result-container {
+    flex-direction: column;
+  }
+
+  /* Sidebar hidden by default */
+  .sidebar-container {
     display: none;
   }
 
-  /* Make the map take full width */
-  .search-result-container > *:last-child {
+  .map-container {
     flex: 1;
-  }
-
-  #map {
     height: 100vh;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* Always show Sidebar on larger screens */
-  .sidebar-toggle-btn {
-    display: block;
   }
 }

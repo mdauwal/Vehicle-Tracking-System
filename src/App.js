@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { IncidenceProvider } from './context/IncidenceContext';
 import {
   Activities,
   ClickToView,
@@ -10,16 +11,18 @@ import {
   ViewInMap,
 } from './pages';
 import SuccesfulShipments from './pages/Succesfulshipments';
+import Decision from './pages/decision';
 
 function App() {
   return (
-    <>
+    <IncidenceProvider>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/succesful-shipments" element={<SuccesfulShipments />} />
           <Route path="/login" element={<Login />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/decisions" element={<Decision />} />
           <Route
             path="/destination-tracking"
             element={<DestinationTracking />}
@@ -38,7 +41,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </>
+    </IncidenceProvider>
   );
 }
 

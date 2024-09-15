@@ -140,7 +140,7 @@ const Sidebar = () => {
         {/* Trucks Section */}
         <div className="p-3 border border-gray-400 rounded mb-4">
           <div className="flex flex-1">
-            <div>
+            <div className="bg-[#9DBDFF] p-2 rounded-full">
               <img src={Truck} alt="Route 2" />
             </div>
             <div className="ml-2">
