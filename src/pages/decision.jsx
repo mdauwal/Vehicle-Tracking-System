@@ -1,5 +1,6 @@
 import React from 'react';
 import contentImage from '../assets/images/Variations.png';
+import { Datepicker } from 'flowbite-react';
 
 const Decision = () => {
   return (
@@ -177,7 +178,7 @@ const Decision = () => {
           <div className="w-[1px] h-20 bg-[#C1C7D0] hidden md:block" />
 
           <div className="flex flex-col gap-2 items-start justify-start ">
-            <input type="date" className="px-4" />
+            <Datepicker className="theme" theme={'light'} />
             <p className="text-[#8993A4] font-Avenir font-normal text-base px-4 pb-4">
               Tell us when this will happen
             </p>
