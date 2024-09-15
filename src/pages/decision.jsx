@@ -178,7 +178,7 @@ const Decision = () => {
           <div className="w-[1px] h-20 bg-[#C1C7D0] hidden md:block" />
 
           <div className="flex flex-col gap-2 items-start justify-start ">
-            <Datepicker className="theme" theme={'light'} />
+            <Datepicker />
             <p className="text-[#8993A4] font-Avenir font-normal text-base px-4 pb-4">
               Tell us when this will happen
             </p>
