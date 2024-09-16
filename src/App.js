@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { IncidenceProvider } from './context/IncidenceContext';
 import {
   Activities,
   ClickToView,
@@ -10,16 +11,18 @@ import {
   ViewInMap,
 } from './pages';
 import SuccesfulShipments from './pages/Succesfulshipments';
+import Decision from './pages/decision';
 
 function App() {
   return (
-    <>
+    <IncidenceProvider>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/succesful-shipments" element={<SuccesfulShipments />} />
           <Route path="/login" element={<Login />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/decisions" element={<Decision />} />
           <Route
             path="/destination-tracking"
             element={<DestinationTracking />}
@@ -38,21 +41,7 @@ function App() {
           />
         </Route>
       </Routes>
-
-      {/* // <div className="border bg-slate-200 mt-10">
-      //   <p>Routing examples</p>
-      //   <div className="flex gap-2">
-      //     <a href="/">home</a>
-      //     <a href="/succesful-shipments">succesful-shipments</a>
-      //     <a href="/login">login</a>
-      //     <a href="/activities">activities</a>
-      //     <a href="/destination-tracking">destination-tracking</a>
-      //     <a href="/destination-tracking/search-results">search-results</a>
-      //     <a href="/destination-tracking/view-in-map">view-in-map</a>
-      //     <a href="/destination-tracking/click-to-view">click-to-view</a>
-      //   </div>
-      // </div> */}
-    </>
+    </IncidenceProvider>
   );
 }
 
