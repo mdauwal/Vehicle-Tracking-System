@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Sidebar from "./Sidebar";
 import MapComponent from "./MapComponent";
 import "./SearchResults.css";
 
 function SearchResult() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Track sidebar state
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false); // Track sidebar state
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -27,10 +27,8 @@ function SearchResult() {
         </div>
       )}
 
-      {/* Map always visible */}
-      <MapComponent />
+       <MapComponent />
 
-      {/* Overlay effect when sidebar is open on mobile */}
       {isSidebarOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
     </div>
   );
