@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { IncidenceProvider } from './context/IncidenceContext';
+import 'leaflet/dist/leaflet.css';
 import {
   Activities,
   ClickToView,
