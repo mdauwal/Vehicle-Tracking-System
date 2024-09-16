@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Truck from "../data/Truck.png";
 import greenFlag from "../data/greenFlag.png";
@@ -6,10 +6,30 @@ import redFlag from "../data/redFlag.png";
 import yellowFlag from "../data/yellowFlag.png";
 
 const Sidebar = () => {
+  const now = new Date().toLocaleTimeString();
+
+  const [time, setTime] = useState(now);
+
+  function updateTime() { 
+    const newTime = new Date().toLocaleTimeString();
+    setTime(newTime)
+  };
+
+  setInterval(() => {
+    setTime(updateTime)
+  }, 1000);
+
+
+
+
   return (
-    <div className="overflow-y-auto p-4 w-96 h-full bg-white shadow-lg">
+    <div className="overflow-y-auto p-4 bg-white shadow-lg">
       <div className="mb-4">
+        <div className="flex flex-1 gap-10px">
         <h2 className="font-semibold text-lg mb-4">Search Result</h2>
+        <h4 className="font-semibold text-lg ml-20 mb-4 border-2 rounded border-blue-600 px-1">{time}</h4>
+        </div>
+        
 
         <div className="p-4 border border-blue-500 rounded mb-4">
           <h3 className="font-semibold text-gray-800">Sokoto's Status</h3>
@@ -94,15 +114,15 @@ const Sidebar = () => {
             <span className="bg-gradient-to-r from-red-300 to-yellow-500 px-1 p-0.5 text-sm text-black font-bold">
               Abuja
             </span>
-            <span className="mx-1 text-sm">-</span>
+            <span className="mx-1 text-xs">--</span>
             <span className="bg-gradient-to-r from-yellow-500 to-red-500 px-1 p-0.5  font-bold text-sm text-black">
               Kaduna
             </span>
-            <span className="mx-1 text-sm">-</span>
+            <span className="mx-1 text-xs">--</span>
             <span className="bg-[#FF0000] p-0.5 px-1 font-bold text-sm text-black">
               Gusau
             </span>
-            <span className="mx-1 text-sm">-</span>
+            <span className="mx-1 text-xs">--</span>
             <span className="bg-[#FF0000] p-0.5 px-1 font-bold text-sm text-black">
               Sokoto
             </span>
@@ -122,15 +142,15 @@ const Sidebar = () => {
             <span className="bg-gradient-to-r from-yellow-500 to-red-400 px-1 p-0.5 text-sm text-black font-bold">
               Abuja
             </span>
-            <span className="mx-1 text-sm">-</span>
+            <span className="mx-1 text-xs">--</span>
             <span className="bg-yellow-500 p-0.5 text-sm text-black font-bold">
               Minna
             </span>
-            <span className="mx-1 text-sm">-</span>
+            <span className="mx-1 text-xs">--</span>
             <span className="bg-yellow-500 p-0.5 text-sm font-bold text-black">
               Nasarawa
             </span>
-            <span className="mx-1 text-sm">-</span>
+            <span className="mx-1 text-xs">--</span>
             <span className="bg-[#FF0000] p-0.5 text-sm text-black font-bold">
               Sokoto
             </span>

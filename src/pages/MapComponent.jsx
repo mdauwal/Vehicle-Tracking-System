@@ -13,16 +13,13 @@ function MapComponent({ onLocationSelected = () => {} }) {
   const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
-    // Ensure map isn't re-initialized
     if (!mapRef.current) {
       const mapElement = document.getElementById('map');
 
-      // Check if the mapElement exists and hasn't been initialized
       if (mapElement && !mapElement._leaflet_id) {
         const mapInstance = L.map(mapElement).setView([9.060736, 7.487354], 6);
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(mapInstance);
 
-        // Map click event to get coordinates
         mapInstance.on("click", (e) => {
           const coordinates = [e.latlng.lat, e.latlng.lng];
           onLocationSelected(coordinates);
@@ -30,11 +27,10 @@ function MapComponent({ onLocationSelected = () => {} }) {
           setIsCopied(false);
         });
 
-        mapRef.current = mapInstance; // Store the initialized map instance
+        mapRef.current = mapInstance;
       }
     }
 
-    // Cleanup the map instance on unmount
     return () => {
       if (mapRef.current) {
         mapRef.current.remove();
@@ -66,7 +62,7 @@ function MapComponent({ onLocationSelected = () => {} }) {
 
   return (
     <div className="relative">
-      <div id="map" className="w-full h-90vh"></div>
+      <div id="map"></div>
   
       <Link
         to="/search-route"
