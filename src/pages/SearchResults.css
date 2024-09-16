@@ -1,0 +1,57 @@
+.search-result-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar-container {
+  flex: 0 0 35%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50; /* Appears below sidebar but above map */
+}
+
+/* Button styling */
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 101;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Map takes full width on small screens */
+@media (max-width: 1024px) {
+  .search-result-container {
+    flex-direction: column;
+  }
+
+  /* Sidebar hidden by default */
+  .sidebar-container {
+    display: none;
+  }
+
+  .map-container {
+    flex: 1;
+    height: 100vh;
+  }
+}
