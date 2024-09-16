@@ -68,7 +68,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="bg-gradient-to-b from-[#FAFAFA] to-[#FAFAFA80] px-[100px]">
+      <div className="bg-gradient-to-b from-[#FAFAFA] to-[#FAFAFA80] px-[80px] py-10">
         {/* HERO/WELCOME TEXT */}
         <div className="font-Avenir mb-12">
           <h1 className="text-2xl font-bold">Welcome back Admin's Name</h1>
@@ -78,7 +78,7 @@ const Dashboard = () => {
         </div>
 
         {/* CARD CONTAINER */}
-        <div className="flex flex-wrap items-center justify-between w-full mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
           {/* Mapping the data above into the card component */}
           {cardData.map((card, index) => (
             <Card
@@ -93,14 +93,14 @@ const Dashboard = () => {
 
         {/* CHART AND DATA CONTAINER */}
 
-        <div className="flex flex-wrap flex-row justify-between border border-[#DEEBFF]">
+        <div className="flex flex-wrap justify-between border border-[#DEEBFF]">
           {/* chart heading, colour key and chart  */}
           <div className="p-8">
             <div className="flex">
-              <div className="flex  flex-wrap gap-2 md:gap-48 items-center">
-                <div className="flex flex-col font-950">
-                  <h2>Total Shipments</h2>
-                  <div className="flex gap-4 text-sm">
+              <div className="flex flex-wrap sm:gap-1 md:gap-48 items-center">
+                <div className="flex flex-col font-Avenir  mb-4 md:mb-0">
+                  <h2 className="font-bold text-lg mb-2">Total Shipments</h2>
+                  <div className="flex gap-2 text-sm">
                     <span className="flex items-center gap-1 text-sm">
                       <GoHorizontalRule className="text-[#0065FF] text-2xl bold" />
                       Success rate
@@ -113,8 +113,8 @@ const Dashboard = () => {
                 </div>
 
                 {/* filter dropdown */}
-                <div className="flex flex-wrap gap-2">
-                  <form className="flex items-center bg-white border rounded-[50px] px-3 py-1 border-gray-300 w-ma max-w-sm mx-auto">
+                <div className="grid sm:grid-cols-1 grid-cols-2 gap-2 w-full md:w-auto">
+                  <form className="flex items-center bg-white border rounded-full px-3 py-1 border-gray-300 max-w-sm mx-auto">
                     <span className="text-[#8494A5] mr-3">Filter</span>
 
                     <select
@@ -122,21 +122,28 @@ const Dashboard = () => {
                       class="text-bold text-gray-900 text-sm rounded-e-lg border-s-gray-100 outline-none dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     >
                       <option selected>Select a year</option>
-                      <option value="JN">January</option>
-                      <option value="TX">February</option>
-                      <option value="WH">March</option>
-                      <option value="FL">April</option>
-                      <option value="VG">May</option>
-                      <option value="GE">June</option>
-                      <option value="MI">July</option>
-                      <option value="MI">August</option>
-                      <option value="MI">September</option>
-                      <option value="MI">October</option>
-                      <option value="MI">November</option>
-                      <option value="MI">December</option>
+                      {/* Dropdown options */}
+                      {[
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December",
+                      ].map((month, index) => (
+                        <option key={index} value={month.slice(0, 2)}>
+                          {month}
+                        </option>
+                      ))}
                     </select>
                   </form>
-                  <form className="flex items-center bg-white border rounded-[50px] px-3 py-0 border-gray-300 w-ma max-w-sm mx-auto">
+                  <form className="flex items-center bg-white border rounded-full px-3 py-1 border-gray-300 max-w-sm mx-auto">
                     <span className="text-[#8494A5] mr-3">Filter</span>
 
                     <select
@@ -144,18 +151,25 @@ const Dashboard = () => {
                       class="text-bold text-gray-900 text-sm rounded-e-lg border-s-gray-100 outline-none dark:border-s-gray-700 border-s-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     >
                       <option selected>Select a year</option>
-                      <option value="JN">January</option>
-                      <option value="TX">February</option>
-                      <option value="WH">March</option>
-                      <option value="FL">April</option>
-                      <option value="VG">May</option>
-                      <option value="GE">June</option>
-                      <option value="MI">July</option>
-                      <option value="MI">August</option>
-                      <option value="MI">September</option>
-                      <option value="MI">October</option>
-                      <option value="MI">November</option>
-                      <option value="MI">December</option>
+                      {/* Dropdown options */}
+                      {[
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December",
+                      ].map((month, index) => (
+                        <option key={index} value={month.slice(0, 2)}>
+                          {month}
+                        </option>
+                      ))}
                     </select>
                   </form>
                 </div>
@@ -164,7 +178,7 @@ const Dashboard = () => {
           </div>
 
           {/* SHIPMENT STATS/DATA */}
-          <div className="text-center border-l">
+          <div className="text-center border-l border-[#DEEBFF] w-full md:w-fit">
             {shipmentData.map((data, index) => (
               <ShipmentInfo key={index} title={data.title} value={data.value} />
             ))}
@@ -172,29 +186,106 @@ const Dashboard = () => {
         </div>
 
         {/* TRUCK DRIVERS CARD */}
-        <div className="border flex flex-wrap w-full my-11 p-10">
-          {/* DONUT CHART, VALUES AND KEYS */}
-          <div className=" flex flex-col border-r w-1/2">
+        <div className="border border-[#DEEBFF] flex flex-wrap md:flex-nowrap my-11 p-10 h-fit">
+          {/* TRUCK DRIVERS: DONUT CHART, VALUES AND KEYS */}
+          <div className="flex flex-col w-full mb-5 md:mb-0 md:w-1/2 md:border-r pr-8">
             <label className="font-bold mb-5">Truck Drivers</label>
-            {/* DONUT CHART */}
-            <div className="flex justify-between items-center gap-8 ">
-              <div>
-                <div className="w-48 ">
-                  <CircularProgressbar
-                    className="text-black font-bold"
-                    value={80}
-                    text={"1536"}
-                    styles={buildStyles({
-                      display: "flex",
-                      width: "1px",
-                      pathColor: "#0052CC",
-                      textColor: "#000000",
-                      textSize: "14px",
-                    })}
-                  />
-                </div>
 
-                {/* <div className="relative w-64 h-64">
+            <div className="flex flex-wrap justify-between items-start gap-8">
+              {/* DONUT CHART */}
+              <div className="w-48 mx-auto md:mx-0">
+                <CircularProgressbar
+                  className="text-black font-bold"
+                  value={80}
+                  text={"1536"}
+                  styles={buildStyles({
+                    display: "flex",
+                    pathColor: "#0052CC",
+                    textColor: "#000000",
+                    textSize: "14px",
+                  })}
+                />
+              </div>
+
+              {/* KEYS TO CHART */}
+              <div className="flex flex-col gap-5">
+                <label className="flex items-start gap-2 text-sm">
+                  <span className="mt-2.5 bg-[#0052CC] rounded-full h-1 w-6"></span>
+                  <div>
+                    <p className="text-sm text-[#5E6C84]">
+                      Drivers with Successful Shipments
+                    </p>
+                    <p className="font-bold">1211</p>
+                  </div>
+                </label>
+
+                <label className="flex items-start gap-2 text-sm">
+                  <span className="mt-2.5 bg-[#2684FF] rounded-full h-1 w-6"></span>
+                  <div>
+                    <p className="text-sm text-[#5E6C84]">
+                      Drivers with incidents
+                    </p>
+                    <p className="font-bold">124</p>
+                  </div>
+                </label>
+
+                <label className="flex items-start gap-2 text-sm">
+                  <span className="mt-2.5 bg-[#B3D4FF] rounded-full h-1 w-6"></span>
+                  <div>
+                    <p className="text-sm text-[#5E6C84]">Drivers on route</p>
+                    <p className="font-bold">201</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          {/* AVAILABILITY PROGRESS BAR */}
+          <div className="w-full md:w-1/2 pl-8 md:border-t-0 border-t">
+            <h3 className="font-bold my-4 md:mb-7">Title goes here</h3>
+
+            {/* PROGRESSBAR */}
+            <div className="flex flex-col">
+              <h2 className="mb-5 text-2xl font-bold dark:text-white">
+                594{" "}
+                <span className="text-gray-400 text-base font-normal">
+                  Total TL
+                </span>
+              </h2>
+
+              <div className="bg-gray-300 rounded-full h-2.5 w-full mb-4 dark:bg-gray-700">
+                <div className="bg-black h-2.5 w-2/12 rounded-full dark:bg-gray-300"></div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-8 mt-7">
+                <label className="flex items-start gap-2">
+                  <span className="mt-2.5 bg-[#000000] rounded-full h-1 w-6"></span>
+                  <div>
+                    <p className="text-sm text-[#D0D1D2]">Available</p>
+                    <p className="font-bold text-sm text-[#11263C]">179 TL</p>
+                  </div>
+                </label>
+
+                <label className="flex items-start gap-2">
+                  <span className="mt-2.5 bg-[#D0D1D2] rounded-full h-1 w-6"></span>
+                  <div>
+                    <p className="text-sm text-[#D0D1D2]">Unavailable</p>
+                    <p className="font-bold text-sm text-[#11263C]">394 TL</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Dashboard;
+
+{
+  /* <div className="relative w-64 h-64">
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <span className="text-4xl font-bold">1536</span>
                     <span className="text-lg">Total Drivers</span>
@@ -246,78 +337,5 @@ const Dashboard = () => {
                       cy="128"
                     />
                   </svg>
-                </div> */}
-              </div>
-              {/* <DonutChart /> */}
-              {/*KEYS TO CHART*/}
-              <div className="w-full flex flex-col md:gap-5">
-                <label className="flex gap-2 text-sm">
-                  <span className="mt-2.5 bg-[#0052CC] rounded-full h-1 w-6"></span>
-                  <div>
-                    <p className="text-sm text-[#5E6C84]">
-                      Drivers with Successful Shipments
-                    </p>
-                    <p className="font-bold sm">1211</p>
-                  </div>
-                </label>
-                <label className="flex gap-2 text-sm">
-                  <span className="mt-2.5 bg-[#2684FF] rounded-full h-1 w-6"></span>
-                  <div>
-                    <p className="text-sm text-[#5E6C84]">
-                      Drivers with incidents
-                    </p>
-                    <p className="font-bold sm">124</p>
-                  </div>
-                </label>
-                <label className="flex gap-2 text-sm">
-                  <span className="mt-2.5 bg-[#B3D4FF] rounded-full h-1 w-6"></span>
-                  <div>
-                    <p className="text-sm text-[#5E6C84]">Drivers on route</p>
-                    <p className="font-bold sm">201</p>
-                  </div>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          {/*AVAILABILITY PROGRESS BAR */}
-          <div className="w-1/2 pl-8 font-Avenir">
-            <h3 className="font-bold mb-7">Title goes here</h3>
-
-            {/* PROGRESSBAR */}
-            <div className="w-full ">
-              <h2 class="mb-5 text-2xl font-bold dark:text-white">
-                594{" "}
-                <span className="text-gray-400 text-base font-normal ">
-                  Total TL
-                </span>
-              </h2>
-
-              <div class=" bg-gray-300 rounded-full h-2.5 w-full mb-4 dark:bg-gray-700">
-                <div class="bg-black h-2.5 w-2/12 rounded-full dark:bg-gray-300 "></div>
-                <div className="flex gap-8 mt-7">
-                  <label className="flex gap-2">
-                    <span className="mt-2.5 bg-[#000000] rounded-full h-1 w-6"></span>
-                    <div>
-                      <p className="text-sm text-[#D0D1D2]">Available</p>
-                      <p className="font-bold text-sm text-[#11263C]">179 TL</p>
-                    </div>
-                  </label>
-                  <label className="flex gap-2">
-                    <span className="mt-2.5 bg-[#D0D1D2] rounded-full h-1 w-6"></span>
-                    <div>
-                      <p className="text-xs text-[#D0D1D2]">Unvailable</p>
-                      <p className="font-bold text-sm text-[#11263C]">394 TL</p>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Dashboard;
+                </div> */
+}
