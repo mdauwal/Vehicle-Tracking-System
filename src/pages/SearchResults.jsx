@@ -1,7 +1,7 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import MapComponent from "./MapComponent";
-import "./SearchResults.css";
+import React from 'react';
+import Sidebar from './Sidebar';
+import MapComponent from './MapComponent';
+import './SearchResults.css';
 
 function SearchResult() {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false); // Track sidebar state
@@ -17,7 +17,7 @@ function SearchResult() {
         className="sidebar-toggle-btn lg:hidden" // Hidden on large screens
         onClick={toggleSidebar}
       >
-        {isSidebarOpen ? "Close Sidebar" : "Open Sidebar"}
+        {isSidebarOpen ? 'Close Sidebar' : 'Open Sidebar'}
       </button>
 
       {/* Sidebar - Visible based on the toggle state */}
@@ -27,9 +27,11 @@ function SearchResult() {
         </div>
       )}
 
-       <MapComponent />
+      <MapComponent />
 
-      {isSidebarOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
+      {isSidebarOpen && (
+        <div className="sidebar-overlay" onClick={toggleSidebar}></div>
+      )}
     </div>
   );
 }
