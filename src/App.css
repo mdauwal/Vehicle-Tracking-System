@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+/* Add this in your main CSS file */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #3b82f6; /* Tailwind's blue-500 */
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #3b82f6; /* Tailwind's blue-500 */
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Custom styles for react-datepicker to align with Tailwind CSS */
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  width: 100%; /* Full width */
+  padding: 0.5rem; /* Tailwind p-2 */
+  line-height: 1.5; /* Tailwind leading-normal */
+  border-radius: 0.375rem; /* Tailwind rounded-md */
+  border: 1px solid #d1d5db; /* Tailwind border-gray-300 */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.react-datepicker__input-container input {
+  appearance: none; /* Remove default styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Customize the colors and borders on focus */
+.react-datepicker__input-container input:focus {
+  outline: none;
+  border-color: #60a5fa; /* Tailwind border-blue-500 */
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5); /* Tailwind ring */
 }
