@@ -1,23 +1,19 @@
-import React from "react";
+import React from 'react';
+import { DownwardIcon, UpwardIcon } from '../icons/Icons';
 
-const Card = ({ title, subtext, value, percentage }) => {
+const Card = ({ title, subtext, value, percentage, up }) => {
   return (
-    <div className="flex flex-wrap flex-col justify-between items-start p-2.5 w-64 gap-5 border border-[#DEEBFF] rounded bg-[#ffffff] hover:bg-base-200 hover:border-none">
+    <div className="flex flex-col items-center justify-center p-4 border border-[#deebff] rounded bg-[#ffffff] gap-4">
       <div className="flex flex-col justify-start items-start w-full">
-        <h1 class="font-Dmsans text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
-          {title}
-        </h1>
-        <p class="font-normal text-xs text-gray-700 dark:text-gray-400 mb-5">
-          {subtext}
-        </p>
+        <h1 class="font-Dmsans font-bold text-2xl text-[#000000]">{title}</h1>
+        <p class="font-Dmsans font-normal text-sm text-[#000000]">{subtext}</p>
       </div>
       <div className="flex justify-between items-center w-full">
-        <p class="font-normal text-base text-[#404040]-700 dark:text-gray-400">
-          {value}
-        </p>
-        <p class="font-normal text-gray-700 dark:text-gray-400 text-{}">
-          {percentage}
-        </p>
+        <p class="font-medium text-xl text-[#006644]">{value}</p>
+        <div className="flex items-center justify-start gap-2">
+          <p class="font-medium text-xl text-[#006644]">{percentage}</p>
+          {up ? <UpwardIcon /> : <DownwardIcon />}
+        </div>
       </div>
     </div>
   );
