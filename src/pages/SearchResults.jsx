@@ -1,7 +1,7 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import MapComponent from "./MapComponent";
-import "./SearchResults.css";  
+import React from 'react';
+import Sidebar from './Sidebar';
+import MapComponent from './MapComponent';
+import './SearchResults.css';
 
 function SearchResult() {
   return (
