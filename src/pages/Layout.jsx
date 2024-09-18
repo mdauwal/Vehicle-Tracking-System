@@ -1,11 +1,11 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import Beepboop from '../assets/Beepboop.png';
-import { BsBell } from 'react-icons/bs';
-import { RiArrowDropDownLine } from 'react-icons/ri';
+import React, { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+import Beepboop from "../assets/Beepboop.png";
+import { BsBell } from "react-icons/bs";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Layout = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className=" h-screen">
       <nav class=" mb-0 border shadow-md">
@@ -37,6 +37,7 @@ const Layout = () => {
             <button
               data-collapse-toggle="navbar-cta"
               type="button"
+              onClick={() => setIsOpen(!isOpen)}
               class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-cta"
               aria-expanded="false"
@@ -60,10 +61,12 @@ const Layout = () => {
             </button>
           </div>
           <div
-            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            class={`items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ${
+              isOpen ? "block" : "hidden"
+            }`}
             id="navbar-cta"
           >
-            <ul class="flex flex-wrap flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:border-gray-700">
+            <ul class="flex flex-wrap flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:border-gray-700">
               <li>
                 <a
                   href="/"
@@ -114,7 +117,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer className="footer fixed bottom-0 left-0 footer-center bg-white text-base-content p-4 border">
+      <footer className="footer footer-center bg-white text-base-content p-4 border">
         <aside>
           <p>
             Copyright © {new Date().getFullYear()} - All right reserved by ACME
