@@ -8,7 +8,7 @@ const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className=" h-screen">
-      <nav class=" mb-0 border shadow-md">
+      <nav class=" mb-0 border shadow-md w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <span className="font-Dmsans text-lg font-bold text-[#0747A6]">
             BRAND LOGO

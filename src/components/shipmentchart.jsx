@@ -1,6 +1,6 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
-import 'chart.js/auto';
+import React from "react";
+import { Line } from "react-chartjs-2";
+import "chart.js/auto";
 
 const ShipmentChart = () => {
   // Data for the chart
@@ -8,24 +8,24 @@ const ShipmentChart = () => {
     labels: Array.from({ length: 22 }, (_, i) => i + 1),
     datasets: [
       {
-        label: 'Success Rate',
+        label: "Success Rate",
         data: [
           15, 25, 35, 20, 45, 55, 40, 50, 45, 38, 50, 55, 45, 35, 38, 40, 50,
           48, 38, 45, 50, 42,
         ],
-        borderColor: '#2563EB',
-        backgroundColor: 'rgba(37, 99, 235, 0.3)',
+        borderColor: "#2563EB",
+        backgroundColor: "rgba(37, 99, 235, 0.3)",
         tension: 0.4,
         fill: true,
       },
       {
-        label: 'Incidents',
+        label: "Incidents",
         data: [
           10, 20, 30, 15, 25, 35, 25, 30, 32, 28, 32, 30, 25, 20, 32, 35, 30,
           25, 30, 35, 28, 25,
         ],
-        borderColor: '#EF4444',
-        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+        borderColor: "#EF4444",
+        backgroundColor: "rgba(239, 68, 68, 0.2)",
         tension: 0.4,
         fill: false,
       },
@@ -37,19 +37,19 @@ const ShipmentChart = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
         labels: {
           usePointStyle: true,
         },
       },
       tooltip: {
         enabled: true,
-        mode: 'index',
+        mode: "index",
         intersect: false,
         callbacks: {
           label: function (tooltipItem) {
             return (
-              tooltipItem.dataset.label + ': ' + tooltipItem.formattedValue
+              tooltipItem.dataset.label + ": " + tooltipItem.formattedValue
             );
           },
         },
@@ -62,16 +62,16 @@ const ShipmentChart = () => {
         },
         title: {
           display: true,
-          text: 'Days',
+          text: "Days",
         },
       },
       y: {
         grid: {
-          color: '#E5E7EB',
+          color: "#E5E7EB",
         },
         title: {
           display: true,
-          text: 'Count',
+          text: "Count",
         },
         min: 0,
         max: 60,
@@ -80,13 +80,15 @@ const ShipmentChart = () => {
   };
 
   return (
-    <div className="p-4 bg-white shadow-md rounded-lg">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold text-gray-800">Total Shipments</h2>
-        <div className="flex  flex-col md:flex-row">
+    <div className="p-4 bg-white rounded-lg">
+      <div className="flex flex-wrap flex-col md:flex-row justify-between items-center mb-4">
+        <h2 className="text-lg font-bold text-gray-800 mb-3">
+          Total Shipments
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="flex items-center bg-white border rounded-full px-3 py-1 border-gray-300 ">
             <span className="text-[#8494A5] mr-3">Filter</span>
-            <select className="p-2 border rounded focus:outline-none">
+            <select className="p-2 border-l focus:outline-none">
               <option>Select A Month</option>
               <option>January</option>
               <option>February</option>
@@ -104,7 +106,7 @@ const ShipmentChart = () => {
           </div>
           <div className="flex items-center bg-white border rounded-full px-3 py-1 border-gray-300 ">
             <span className="text-[#8494A5] mr-3">Filter</span>
-            <select className="p-2 border rounded focus:outline-none">
+            <select className="p-2 border-l focus:outline-none">
               <option>Select A Month</option>
               <option>January</option>
               <option>February</option>
@@ -123,7 +125,7 @@ const ShipmentChart = () => {
         </div>
       </div>
 
-      <div className="h-72">
+      <div className="h-72 my-9">
         <Line data={data} options={options} />
       </div>
     </div>
