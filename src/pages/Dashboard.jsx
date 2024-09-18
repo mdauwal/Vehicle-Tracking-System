@@ -4,7 +4,11 @@ import dashboardData from '../data/dashboards';
 import { GoHorizontalRule } from 'react-icons/go';
 import ShipmentInfo from '../components/ShipmentInfo';
 import DonutChart from '../components/DonutChart';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { RiArrowDropDownFill, RiDropdownList } from 'react-icons/ri';
 import { ShipmentChart } from '../components';
@@ -125,17 +129,25 @@ const Dashboard = () => {
 
               <div className="flex items-center justify-center gap-4 w-full">
                 <div className="w-1/3 flex items-center justify-between gap-2">
-                  <CircularProgressbar
-                    className="text-black font-bold"
+                  <CircularProgressbarWithChildren
                     value={80}
-                    text={'1536'}
                     styles={buildStyles({
-                      display: 'flex',
-                      pathColor: '#0052CC',
-                      textColor: '#000000',
-                      textSize: '14px',
+                      pathColor: '#f00',
+                      trailColor: '#eee',
+                      strokeLinecap: 'butt',
                     })}
-                  />
+                  >
+                    <CircularProgressbar
+                      value={70}
+                      styles={buildStyles({
+                        trailColor: 'transparent',
+                        strokeLinecap: 'butt',
+                        pathColor: '#0052CC',
+                        textColor: '#000000',
+                      })}
+                      text={'1536'}
+                    />
+                  </CircularProgressbarWithChildren>
                 </div>
                 <div className="flex flex-col gap-5">
                   <label className="flex items-start gap-2 text-sm">
