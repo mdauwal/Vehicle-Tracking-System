@@ -11,7 +11,13 @@ const Card = ({ title, subtext, value, percentage, up }) => {
       <div className="flex justify-between items-center w-full">
         <p class="font-medium text-xl text-[#404040]">{value}</p>
         <div className="flex items-center justify-start gap-2">
-          <p class="font-medium text-xl text-[#006644]">{percentage}</p>
+          <p
+            className={`font-medium text-xl ${
+              up ? "text-[#006644]" : "text-[#BF2600]"
+            }`}
+          >
+            {percentage}
+          </p>
           {up ? <UpwardIcon /> : <DownwardIcon />}
         </div>
       </div>

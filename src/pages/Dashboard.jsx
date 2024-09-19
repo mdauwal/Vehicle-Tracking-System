@@ -76,7 +76,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="flex flex-col items-start justify-start gap-5 min-w-full bg-gradient-to-b from-[#FAFAFA] to-[#FAFAFA80] md:pl-24 md:pr-12 px-5 py-12 pl-12 pr-8">
+      <div className="flex flex-col items-start justify-start gap-5 min-w-full bg-gradient-to-b from-[#FAFAFA] to-[#FAFAFA80] md:px-12 px-5 py-12 ">
         <div className="flex items-start justify-start flex-col">
           <h1 className="font-Avenir text-3xl font-extrabold">
             Welcome back Admin's Name
@@ -123,7 +123,7 @@ const Dashboard = () => {
         <div className="flex flex-wrap items-center justify-center bg-white w-full border border-[#DEEBFF] p-4">
           <div className="flex flex-col gap-4 ">
             <div className="flex flex-col justify-start items-start w-full p-4 gap-4">
-              <h1 className="font-Avenir font-extrabold text-2xl px-10">
+              <h1 className="font-Avenir font-extrabold text-2xl w-full text-center md:text-left">
                 Truck Drivers
               </h1>
 
@@ -181,7 +181,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="w-[1px] md:h-52 bg-[#000000] md:mx-10" />
+          <div className="w-[1px] sm:d-none{Toas} md:h-52 bg-[#000000] md:mx-10" />
           <div className="flex flex-col items-start justify-start w-full md:w-1/2  gap-4 md:border-none border-t">
             <h1 className="font-Avenir font-extrabold text-2xl md:m-0 mt-5">
               Title goes here
