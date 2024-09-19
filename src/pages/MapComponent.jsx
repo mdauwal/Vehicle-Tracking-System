@@ -66,7 +66,7 @@ function MapComponent({ onLocationSelected = () => {} }) {
   
       <Link
         to="/search-route"
-        className="absolute top-5 right-2 bg-white text-blue-600 py-2 px-4 rounded-full font-bold shadow-lg z-[1000]"
+        className="absolute top-5 right-2 bg-white text-blue-600 py-2 px-4 rounded-full font-bold  shadow-lg z-[1000] transition duration-300 ease-in-out hover:bg-blue-600 hover:text-white"
       >
         Back to Search Route
       </Link>
