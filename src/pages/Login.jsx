@@ -75,8 +75,11 @@ const LoginForm = () => {
                         <input
                             type="email"
                             id="email"
-                            className={`w-full text-lg text-[#172B4D] pl-10 pb-6 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all ${
-                                isEmailActive || email ? "pt-5" : "pt-2"
+                            className={`w-full text-lg text-[#172B4D] pl-10 pb-6 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all ${
+                                (isEmailActive || email ? "pt-5" : "pt-2") +
+                                (emailError
+                                    ? " border-red-500"
+                                    : " border-gray-300")
                             }`}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -106,8 +109,13 @@ const LoginForm = () => {
                         <input
                             type={showPassword ? "text" : "password"}
                             id="password"
-                            className={`w-full pl-10 pb-6 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all text-lg text-[#172B4D] ${
-                                isPasswordActive || password ? "pt-5" : "pt-2"
+                            className={`w-full pl-10 pb-6 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all text-lg text-[#172B4D] ${
+                                (isPasswordActive || password
+                                    ? "pt-5"
+                                    : "pt-2") +
+                                (passwordError
+                                    ? " border-red-500"
+                                    : " border-gray-300")
                             }`}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
