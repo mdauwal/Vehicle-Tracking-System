@@ -64,7 +64,7 @@ const LoginForm = () => {
                 <h2 className="font-bold mb-2 text-2xl text-[#091E42]">
                     Welcome to BrandName
                 </h2>
-                <p className="mb-6 text-lg text-[#6B778C]">
+                <p className="mb-6 text-sm text-[#6B778C]">
                     Kindly fill in your details to sign into your account
                 </p>
 

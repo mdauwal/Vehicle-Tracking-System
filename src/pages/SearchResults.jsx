@@ -1,12 +1,15 @@
 import React from 'react';
+import Sidebar from './Sidebar';
+import MapComponent from './MapComponent';
+import './SearchResults.css';
 
-const SearchResults = () => {
+function SearchResult() {
   return (
-    <div>
-      This is the <span className="text-red-800 text-xl">SearchResults</span>{' '}
-      page
+    <div className="search-result-container">
+      <Sidebar />
+      <MapComponent />
     </div>
   );
-};
+}
 
-export default SearchResults;
+export default SearchResult;
