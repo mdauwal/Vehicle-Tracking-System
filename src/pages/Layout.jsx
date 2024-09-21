@@ -9,7 +9,7 @@ const Layout = () => {
   return (
     <div className=" h-screen scro">
       <nav className="mb-0 border shadow-md w-full">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-row flex-wrap items-center justify-between mx-auto p-4">
           <span className="font-Dmsans text-lg font-bold text-[#0747A6]">
             BRAND LOGO
           </span>
@@ -25,11 +25,11 @@ const Layout = () => {
                 <div className="ml-5">
                   <img src={Beepboop} alt="" />
                 </div>
-                <div className="text-sm px-4 py-2">
+                <div className="hidden md:block text-sm px-4 py-2">
                   <p>Admin's Name</p>
                   <span className="text-2xs">Super Admin</span>
                 </div>
-                <RiArrowDropDownLine className="text-3xl" />
+                {/* <RiArrowDropDownLine className="text-3xl" /> */}
               </div>
             </div>
 
@@ -64,7 +64,7 @@ const Layout = () => {
           {/* MOBILE MENU */}
           <div
             className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-              isOpen ? "block" : "hidden"
+              isOpen ? "block h-full md:h-" : "hidden"
             }`}
             id="navbar-cta"
           >
