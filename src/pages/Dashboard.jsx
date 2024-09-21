@@ -101,7 +101,7 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* CHART AND DATA CONTAINER space-x-2 */}
+        {/* LINE-CHART AND DATA CONTAINER space-x-2 */}
 
         <div className="flex flex-col md:flex-row bg-white w-full items-start justify-start border border-[#DEEBFF] my-9">
           <div className="w-full md:w-4/5 md:h-full">
@@ -120,7 +120,9 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* CIRCULAR-CHART AND PROGRESS BAR */}
         <div className="flex flex-wrap items-center justify-center bg-white w-full border border-[#DEEBFF] p-4">
+          {/* CIRCULAR CHART */}
           <div className="flex flex-col gap-4 ">
             <div className="flex flex-col justify-start items-start w-full p-4 gap-4">
               <h1 className="font-Avenir font-extrabold text-2xl w-full text-center md:text-left">
@@ -182,6 +184,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="w-[1px] sm:d-none{Toas} md:h-52 bg-[#000000] md:mx-10" />
+          {/* PROGRESS BAR */}
           <div className="flex flex-col items-start justify-start w-full md:w-1/2  gap-4 md:border-none border-t">
             <h1 className="font-Avenir font-extrabold text-2xl md:m-0 mt-5">
               Title goes here

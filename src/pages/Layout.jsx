@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import Beepboop from "../assets/Beepboop.png";
 import { BsBell } from "react-icons/bs";
+import { useLocation } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   return (
     <div className=" h-screen scro">
       <nav className="mb-0 border shadow-md w-full">
@@ -72,8 +74,12 @@ const Layout = () => {
               <li>
                 <a
                   href="/"
-                  className="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
-                  aria-current="page"
+                  className={`block py-2 px-3 md:p-0 rounded hover:text-blue-700 ${
+                    location.pathname === "/"
+                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
+                      : "text-gray-900"
+                  } `}
+                  aria-current={location.pathname === "/" ? "page" : undefined}
                 >
                   Dashboard
                 </a>
@@ -81,7 +87,14 @@ const Layout = () => {
               <li>
                 <a
                   href="/activities"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
+                    location.pathname === "/activities"
+                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
+                      : "text-gray-900 "
+                  } `}
+                  aria-current={
+                    location.pathname === "/activities" ? "page" : undefined
+                  }
                 >
                   Activities
                 </a>
@@ -89,23 +102,46 @@ const Layout = () => {
               <li>
                 <a
                   href="/destination-tracking"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
+                    location.pathname === "/destination-tracking"
+                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
+                      : "text-gray-900"
+                  } `}
+                  aria-current={
+                    location.pathname === "/destination-tracking"
+                      ? "page"
+                      : undefined
+                  }
                 >
                   Destination Tracking
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  href="/security"
+                  className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
+                    location.pathname === "/security"
+                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
+                      : "text-gray-900"
+                  } `}
+                  aria-current={
+                    location.pathname === "/security" ? "page" : undefined
+                  }
                 >
                   Security
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  href="/settings"
+                  className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
+                    location.pathname === "/settings"
+                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
+                      : "text-gray-900"
+                  } `}
+                  aria-current={
+                    location.pathname === "/settings" ? "page" : undefined
+                  }
                 >
                   Settings
                 </a>
