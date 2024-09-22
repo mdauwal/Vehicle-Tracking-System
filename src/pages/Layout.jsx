@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
-import Beepboop from "../assets/Beepboop.png";
-import { BsBell } from "react-icons/bs";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import React, { useState } from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import Beepboop from '../assets/Beepboop.png';
+import { BsBell } from 'react-icons/bs';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +10,11 @@ const Layout = () => {
     <div className=" h-screen">
       <nav class=" mb-0 border shadow-md">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <span className="font-Dmsans text-lg font-bold text-[#0747A6]">
-            BRAND LOGO
-          </span>
+          <Link to={'/dashboard'}>
+            <span className="font-Dmsans text-lg font-bold text-[#0747A6]">
+              BRAND LOGO
+            </span>
+          </Link>
 
           <div class="flex flex-wrap justify-evenly items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div className="flex  justify-center items-center">
@@ -62,14 +64,14 @@ const Layout = () => {
           </div>
           <div
             class={`items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ${
-              isOpen ? "block" : "hidden"
+              isOpen ? 'block' : 'hidden'
             }`}
             id="navbar-cta"
           >
             <ul class="flex flex-wrap flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:border-gray-700">
               <li>
                 <a
-                  href="/"
+                  href="/dashboard"
                   class="block py-2 px-3 md:p-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
                   aria-current="page"
                 >
