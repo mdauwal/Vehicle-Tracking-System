@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { Link } from 'react-router-dom';
 
-function MapComponent({ onLocationSelected = () => {} }) {
+function MapComponent({ onLocationSelected = () => { } }) {
   const mapRef = useRef(null);
   const [selectedCoordinates, setSelectedCoordinates] = useState(null);
   const [copyIcon, setCopyIcon] = useState(<FileCopyIcon />);
