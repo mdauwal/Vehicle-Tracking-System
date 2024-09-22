@@ -9,6 +9,7 @@ const incidenceData = {
             status: 'still in danger',
             description: 'Possible Car Jacking & Arm Robbery',
             driver: 'Wil97190',
+            truck: 'JFY 2086'
         },
         {
             place: 'jaji - zaria',

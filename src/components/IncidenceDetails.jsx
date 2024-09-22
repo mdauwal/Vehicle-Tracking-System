@@ -5,6 +5,7 @@ import OnRouteImage from '../../src/assets/images/image-16.png'
 import CurrentLocationImage from '../../src/assets/images/current-location.png'
 import PersonImage from '../../src/assets/images/person.png'
 import PlateNumberImage from '../../src/assets/images/image-plate-number.png'
+import CurrentLocationMap from '../components/CurrentLocationMap'
 
 const IncidenceDetails = () => {
 
@@ -19,15 +20,23 @@ const IncidenceDetails = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-5">
                 <div className='col-span-2'>
-                    <img src={CurrentLocationImage} alt="Current Location" className='w-full' />
+                    <CurrentLocationMap />
+                    {/* <h3>map here</h3> */}
+                    {/* <img src={CurrentLocationImage} alt="Current Location" className='w-full' /> */}
                 </div>
 
                 <div className='col-span-1'>
                     <div className="grid grid-rows-3 gap-3">
-                        <img src={OnRouteImage} alt="Current Location" className='w-full row-span-2 grow-1' />
+                        {/* <img src={OnRouteImage} alt="Current Location" className='w-full row-span-2 grow-1' /> */}
+                        <div className='h-60 w-full bg-no-repeat bg-cover bg-center' style={{ backgroundImage: `url(${OnRouteImage})` }}>
+                        </div>
                         <div className="row-span-1 grid grid-cols-2 gap-3">
                             <img src={PlateNumberImage} alt="Current Location" className='w-full' />
-                            <img src={PlateNumberImage} alt="Current Location" className='w-full' />
+                            <div className='border p-5 rounded h-fit'>
+                                <p className='font-Avenir text-[#6B778C] font-semibold text-[.875rem]'>Truck Plate Number</p>
+                                <h1 className='font-bold text-black text-[1.25rem]'>{selectedIncidence.truck}</h1>
+                                <hr />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -35,7 +44,7 @@ const IncidenceDetails = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-3 mt-5'>
                 <div className="card bg-base-100 w-full shadow-xl p-5 col-span-1">
-                    <h3 className='text-black font-Avenir font-bold mb-5 text-[1.5rem]'>Incidence Report</h3>
+                    <h3 className='text-black font-Avenir font-bold mb-5 text-[1.5rem] text-center md:text-left'>Incidence Report</h3>
 
                     <span className='flex justify-between mb-3'>
                         <p className='text-[#6B778C] font-Avenir text-[.875rem]'>Place of Incident</p>
@@ -65,7 +74,7 @@ const IncidenceDetails = () => {
                 </div>
 
                 <div className="card bg-base-100 w-full shadow-xl p-5 col-span-1">
-                    <h3 className='text-black font-Avenir font-bold mb-5 text-[1.5rem]'>Driver’s Information</h3>
+                    <h3 className='text-black font-Avenir font-bold mb-5 text-[1.5rem] text-center md:text-left'>Driver’s Information</h3>
 
                     <span className='grid grid-cols-1 md:grid-cols-3 gap-3 mb-5'>
                         <div className="avatar col-span-1 md:border-r-2 flex justify-center">

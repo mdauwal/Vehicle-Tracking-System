@@ -6,6 +6,7 @@ export const IncidenceProvider = ({ children }) => {
 
     const [incidenceData, setIncidenceData] = useState(IncidenceData);
     const [selectedIncidenceIndex, setSelectedIncidenceIndex] = useState(0);
+    const [showDetails, setShowDetails] = useState(false); // State to toggle between card and details view
 
     const selectedIncidence = incidenceData.incidence[selectedIncidenceIndex] || {}; // Handle potential undefined index
     
@@ -19,6 +20,11 @@ export const IncidenceProvider = ({ children }) => {
 
     const handleCardClick = (index) => {
         setSelectedIncidenceIndex(index);
+        setShowDetails(true);   // show the details component
+    };
+
+    const goBackToCards = () => {
+        setShowDetails(false);  // return to the cards component
     };
 
     return <IncidenceContext.Provider value={{
@@ -28,7 +34,9 @@ export const IncidenceProvider = ({ children }) => {
         selectedIncidence,
         incidenceDriver,
         handleCardClick,
-
+        showDetails,
+        goBackToCards
+        
     }}>{children}</IncidenceContext.Provider>
 }
 
