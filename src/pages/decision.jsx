@@ -1,10 +1,12 @@
 import React from 'react';
 import contentImage from '../assets/images/Variations.png';
 import { Datepicker } from 'flowbite-react';
+import { useNavigate } from 'react-router-dom';
 
 const Decision = () => {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col md:flex-row items-start justify-center py-4 px-20 gap-4">
+    <div className="flex flex-col md:flex-row items-start justify-center py-2 px-4 md:py-4 md:px-20 gap-4">
       <div className="flex flex-col items-start justify-start w-full gap-4">
         <h1 className="font-Avenir text-3xl font-extrabold text-[#000000]">
           Make data driven decisions
@@ -13,9 +15,9 @@ const Decision = () => {
           Pick a location and see possible routes that’s safe to make shipments.
         </h2>
 
-        <div className="rounded-xl border border-[#C1C7D0] py-2 px-4 flex items-start justify-start md:items-center md:justify-between w-full flex-col md:flex-row">
+        <div className="rounded-xl border border-[#C1C7D0] py-2 px-4 grid grid-cols-1 w-full md:flex md:items-center md:justify-start md:gap-4">
           <div className="flex flex-col gap-2 items-start justify-start ">
-            <select className="select w-full max-w-xs text-xl font-Avenir font-black outline-none focus:border-none focus:outline-none ">
+            <select className="select w-full max-w-xs text-base md:text-xl font-Avenir font-black outline-none focus:border-none focus:outline-none ">
               <option disabled selected>
                 Select Start Location
               </option>
@@ -57,7 +59,7 @@ const Decision = () => {
               <option>Yobe</option>
               <option>Zamfara</option>
             </select>
-            <p className="text-[#8993A4] font-Avenir font-normal text-base px-4 pb-4">
+            <p className="text-[#8993A4] font-Avenir font-normal text-xs md:text-base px-4 pb-4">
               Where are you shipping from?
             </p>
           </div>
@@ -65,7 +67,7 @@ const Decision = () => {
           <div className="w-[1px] h-20 bg-[#C1C7D0] hidden md:block" />
 
           <div className="flex flex-col gap-2 items-start justify-start ">
-            <select className="select w-full max-w-xs text-xl font-Avenir font-black outline-none focus:border-none focus:outline-none ">
+            <select className="select w-full max-w-xs text-base md:text-xl font-Avenir font-black outline-none focus:border-none focus:outline-none ">
               <option disabled selected>
                 Select Destination Location
               </option>
@@ -107,7 +109,7 @@ const Decision = () => {
               <option>Yobe</option>
               <option>Zamfara</option>
             </select>
-            <p className="text-[#8993A4] font-Avenir font-normal text-base px-4 pb-4">
+            <p className="text-[#8993A4] font-Avenir font-normal text-xs md:text-basetext-base px-4 pb-4">
               Where are you shipping to?
             </p>
           </div>
@@ -115,7 +117,7 @@ const Decision = () => {
           <div className="w-[1px] h-20 bg-[#C1C7D0] hidden md:block" />
 
           <div className="flex flex-col gap-2 items-start justify-start ">
-            <select className="select w-full max-w-xs text-xl font-Avenir font-black outline-none focus:border-none focus:outline-none ">
+            <select className="select w-full max-w-xs text-base md:text-xl font-Avenir font-black outline-none focus:border-none focus:outline-none ">
               <option disabled selected>
                 What are you shipping?
               </option>
@@ -170,7 +172,7 @@ const Decision = () => {
               <option>Salt</option>
               <option>Poultry Feed</option>
             </select>
-            <p className="text-[#8993A4] font-Avenir font-normal text-base px-4 pb-4">
+            <p className="text-[#8993A4] font-Avenir font-normal text-xs md:text-basetext-base px-4 pb-4">
               Select what this shipment is.
             </p>
           </div>
@@ -179,12 +181,15 @@ const Decision = () => {
 
           <div className="flex flex-col gap-2 items-start justify-start ">
             <Datepicker />
-            <p className="text-[#8993A4] font-Avenir font-normal text-base px-4 pb-4">
+            <p className="text-[#8993A4] font-Avenir font-normal text-xs md:text-base px-4 pb-4">
               Tell us when this will happen
             </p>
           </div>
 
-          <button className="bg-[#0747A6] py-4 px-6 text-[#ffffff] text-xl font-Avenir rounded-xl">
+          <button
+            className="bg-[#0747A6] py-4 px-6 text-[#ffffff] text-base md:text-xl font-Avenir rounded-xl"
+            onClick={() => navigate('/destination-tracking/search-results')}
+          >
             Search Route
           </button>
         </div>
