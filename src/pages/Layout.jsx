@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
-import Beepboop from "../assets/Beepboop.png";
-import { BsBell } from "react-icons/bs";
-import { useLocation } from "react-router-dom";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import React, { useState } from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import Beepboop from '../assets/Beepboop.png';
+import { BsBell } from 'react-icons/bs';
+import { useLocation } from 'react-router-dom';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +12,11 @@ const Layout = () => {
     <div className=" h-screen scro">
       <nav className="mb-0 border shadow-md w-full">
         <div className="max-w-screen-xl flex flex-row flex-wrap items-center justify-between mx-auto p-4">
-          <span className="font-Dmsans text-lg font-bold text-[#0747A6]">
-            BRAND LOGO
-          </span>
+          <Link to={'/dashboard'}>
+            <span className="font-Dmsans text-lg font-bold text-[#0747A6]">
+              BRAND LOGO
+            </span>
+          </Link>
 
           <div className="flex flex-wrap justify-evenly items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div className="flex justify-center items-center">
@@ -66,20 +68,22 @@ const Layout = () => {
           {/* MOBILE MENU */}
           <div
             className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-              isOpen ? "block h-full md:h-" : "hidden"
+              isOpen ? 'block h-full md:h-' : 'hidden'
             }`}
             id="navbar-cta"
           >
             <ul className="flex flex-wrap flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
               <li>
                 <a
-                  href="/"
+                  href="/dashboard"
                   className={`block py-2 px-3 md:p-0 rounded hover:text-blue-700 ${
-                    location.pathname === "/"
-                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
-                      : "text-gray-900"
+                    location.pathname === '/dashboard'
+                      ? 'text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700'
+                      : 'text-gray-900'
                   } `}
-                  aria-current={location.pathname === "/" ? "page" : undefined}
+                  aria-current={
+                    location.pathname === '/dashboard' ? 'page' : undefined
+                  }
                 >
                   Dashboard
                 </a>
@@ -88,12 +92,12 @@ const Layout = () => {
                 <a
                   href="/activities"
                   className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
-                    location.pathname === "/activities"
-                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
-                      : "text-gray-900 "
+                    location.pathname === '/activities'
+                      ? 'text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700'
+                      : 'text-gray-900 '
                   } `}
                   aria-current={
-                    location.pathname === "/activities" ? "page" : undefined
+                    location.pathname === '/activities' ? 'page' : undefined
                   }
                 >
                   Activities
@@ -103,13 +107,13 @@ const Layout = () => {
                 <a
                   href="/destination-tracking"
                   className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
-                    location.pathname === "/destination-tracking"
-                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
-                      : "text-gray-900"
+                    location.pathname === '/destination-tracking'
+                      ? 'text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700'
+                      : 'text-gray-900'
                   } `}
                   aria-current={
-                    location.pathname === "/destination-tracking"
-                      ? "page"
+                    location.pathname === '/destination-tracking'
+                      ? 'page'
                       : undefined
                   }
                 >
@@ -120,12 +124,12 @@ const Layout = () => {
                 <a
                   href="/security"
                   className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
-                    location.pathname === "/security"
-                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
-                      : "text-gray-900"
+                    location.pathname === '/security'
+                      ? 'text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700'
+                      : 'text-gray-900'
                   } `}
                   aria-current={
-                    location.pathname === "/security" ? "page" : undefined
+                    location.pathname === '/security' ? 'page' : undefined
                   }
                 >
                   Security
@@ -135,12 +139,12 @@ const Layout = () => {
                 <a
                   href="/settings"
                   className={`block py-2 px-3 md:p-0 rounded  hover:text-white md:hover:text-blue-700 ${
-                    location.pathname === "/settings"
-                      ? "text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700"
-                      : "text-gray-900"
+                    location.pathname === '/settings'
+                      ? 'text-white bg-blue-700 md:bg-white md:text-blue-700  active:bg-blue-700'
+                      : 'text-gray-900'
                   } `}
                   aria-current={
-                    location.pathname === "/settings" ? "page" : undefined
+                    location.pathname === '/settings' ? 'page' : undefined
                   }
                 >
                   Settings

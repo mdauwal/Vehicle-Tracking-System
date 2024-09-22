@@ -1,35 +1,33 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
-import Truck from "../data/Truck.png";
-import greenFlag from "../data/greenFlag.png";
-import redFlag from "../data/redFlag.png";
-import yellowFlag from "../data/yellowFlag.png";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Truck from '../data/Truck.png';
+import greenFlag from '../data/greenFlag.png';
+import redFlag from '../data/redFlag.png';
+import yellowFlag from '../data/yellowFlag.png';
 
 const Sidebar = () => {
   const now = new Date().toLocaleTimeString();
 
   const [time, setTime] = useState(now);
 
-  function updateTime() { 
+  function updateTime() {
     const newTime = new Date().toLocaleTimeString();
-    setTime(newTime)
-  };
+    setTime(newTime);
+  }
 
   setInterval(() => {
-    setTime(updateTime)
+    setTime(updateTime);
   }, 1000);
-
-
-
 
   return (
     <div className="overflow-y-auto p-4 bg-white shadow-lg">
       <div className="mb-4">
         <div className="flex flex-1 gap-10px">
-        <h2 className="font-semibold text-lg mb-4">Search Result</h2>
-        <h4 className="font-semibold text-lg ml-20 mb-4 border-2 rounded border-blue-600 px-1">{time}</h4>
+          <h2 className="font-semibold text-lg mb-4">Search Result</h2>
+          <h4 className="font-semibold text-lg ml-20 mb-4 border-2 rounded border-blue-600 px-1">
+            {time}
+          </h4>
         </div>
-        
 
         <div className="p-4 border border-blue-500 rounded mb-4">
           <h3 className="font-semibold text-gray-800">Sokoto's Status</h3>
@@ -173,7 +171,10 @@ const Sidebar = () => {
             </div>
           </div>
           <div className="flex justify-end">
-            <Link to="/" className="text-blue-600 font-bold underline">
+            <Link
+              to="/destination-tracking/click-to-view"
+              className="text-blue-600 font-bold underline"
+            >
               Click to view
             </Link>
           </div>

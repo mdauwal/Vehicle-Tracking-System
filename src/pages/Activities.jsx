@@ -6,6 +6,7 @@ import 'react-svg-map/lib/index.css';
 import RiskRating from '../components/activities/RiskRating';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const riskMgtItems = [
   {
@@ -38,13 +39,14 @@ function getReactFiberProps(target) {
 
 const Activities = () => {
   const [currentState, setCurrentState] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log('currentState', currentState);
   }, [currentState]);
   return (
-    <div className="flex items-start justify-center py-4 px-40 gap-4">
-      <div className="flex flex-col items-start justify-start w-3/5">
+    <div className="flex flex-col md:flex-row items-start justify-center py-4 px-4 md:py-4 md:px-40 gap-4">
+      <div className="flex flex-col items-start justify-start w-full md:w-3/5">
         <h1 className="font-Avenir text-3xl font-extrabold text-[#000000]">
           Track Activities
         </h1>
@@ -70,13 +72,11 @@ const Activities = () => {
                 test: 'hello',
               });
               document.getElementById('my_modal_4').showModal();
-              console.log('teeeeee', e);
-              console.log('currentState-----', currentState);
             }}
           />
         </div>
       </div>
-      <div className="w-2/5 flex items-center mt-40 justify-center bg-[#FFFFFF]">
+      <div className="w-full md:w-2/5 flex items-center mt-0 md:mt-40 justify-center bg-[#FFFFFF]">
         <div className="w-full">
           <div className="flex flex-col border border-[#DEEBFF] rounded-sm p-10 w-full">
             <h1 className="font-Avenir font-extrabold text-4xl text-[#11263C] pb-4">
@@ -95,8 +95,8 @@ const Activities = () => {
               <>
                 <dialog id="my_modal_4" className="modal">
                   <div className="modal-box w-11/12 max-w-5xl">
-                    <div className="flex items-start justtify-between">
-                      <div className="w-1/2 flex flex-col items-start justify-start">
+                    <div className="flex flex-col md:flex-row items-start justify-start md:justify-between gap-4 md:gap-0">
+                      <div className="w-full md:w-1/2 flex flex-col-reverse md:flex-col items-start justify-start">
                         <div className="w-full flex">
                           <svg xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -170,7 +170,7 @@ const Activities = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="w-1/2 bg-[#FFFFFF] border border-[#C1C7D0] p-4 flex flex-col items-start justify-start gap-2">
+                      <div className="w-full md:w-1/2 bg-[#FFFFFF] border border-[#C1C7D0] p-4 flex flex-col items-start justify-start gap-2">
                         {/* currentState?.state || '' */}
                         <h1 className="text-[#0747A6]font-Avenir font-extrabold text-xl">
                           {currentState?.state}'s Stats
@@ -179,93 +179,6 @@ const Activities = () => {
                           Very HighRisk Level
                         </p>
                         <div className="flex flex-col items-start justify-start gap-4 w-full">
-                          {/*   <svg
-                            width="400"
-                            height="6"
-                            viewBox="0 0 457 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              width="457"
-                              height="6"
-                              rx="3"
-                              fill="#FFBDAD"
-                            />
-                            <rect
-                              width="361.683"
-                              height="6"
-                              rx="3"
-                              fill="#BF2600"
-                            />
-                          </svg>
-
-                          <svg
-                            width="457"
-                            height="6"
-                            viewBox="0 0 457 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              width="457"
-                              height="6"
-                              rx="3"
-                              fill="#FFEBE6"
-                            />
-                            <path
-                              d="M360.985 0.137937C361.012 0.0556651 361.088 0 361.175 0H364.018C364.154 0 364.251 0.132788 364.209 0.262063L362.381 5.86206C362.354 5.94433 362.277 6 362.19 6H359.347C359.211 6 359.115 5.86721 359.157 5.73794L360.985 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M371.431 0.137937C371.457 0.0556651 371.534 0 371.621 0H374.464C374.6 0 374.697 0.132788 374.654 0.262063L372.826 5.86206C372.8 5.94433 372.723 6 372.636 6H369.793C369.657 6 369.56 5.86721 369.603 5.73794L371.431 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M381.876 0.137937C381.903 0.0556651 381.98 0 382.067 0H384.91C385.046 0 385.142 0.132788 385.1 0.262063L383.272 5.86206C383.245 5.94433 383.169 6 383.082 6H380.239C380.103 6 380.006 5.86721 380.048 5.73794L381.876 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M392.322 0.137937C392.349 0.0556651 392.426 0 392.512 0H395.356C395.492 0 395.588 0.132788 395.546 0.262063L393.718 5.86206C393.691 5.94433 393.614 6 393.528 6H390.684C390.548 6 390.452 5.86721 390.494 5.73794L392.322 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M402.767 0.137937C402.794 0.0556651 402.871 0 402.957 0H405.801C405.937 0 406.033 0.132788 405.991 0.262063L404.163 5.86206C404.136 5.94433 404.059 6 403.973 6H401.129C400.993 6 400.897 5.86721 400.939 5.73794L402.767 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M413.214 0.137937C413.241 0.0556651 413.317 0 413.404 0H416.247C416.383 0 416.48 0.132788 416.438 0.262063L414.61 5.86206C414.583 5.94433 414.506 6 414.419 6H411.576C411.44 6 411.344 5.86721 411.386 5.73794L413.214 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M423.659 0.137937C423.686 0.0556651 423.763 0 423.849 0H426.693C426.829 0 426.925 0.132788 426.883 0.262063L425.055 5.86206C425.028 5.94433 424.951 6 424.865 6H422.021C421.885 6 421.789 5.86721 421.831 5.73794L423.659 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M434.105 0.137937C434.132 0.0556651 434.209 0 434.295 0H437.139C437.275 0 437.371 0.132788 437.329 0.262063L435.501 5.86206C435.474 5.94433 435.397 6 435.311 6H432.467C432.331 6 432.235 5.86721 432.277 5.73794L434.105 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M444.551 0.137937C444.578 0.0556651 444.655 0 444.741 0H447.585C447.721 0 447.817 0.132788 447.775 0.262063L445.947 5.86206C445.92 5.94433 445.843 6 445.757 6H442.913C442.777 6 442.681 5.86721 442.723 5.73794L444.551 0.137937Z"
-                              fill="#FFBDAD"
-                            />
-                            <path
-                              d="M9.91309 0H348.946L346.233 6H9.91309V0Z"
-                              fill="#F8E828"
-                            />
-                            <rect
-                              width="272.894"
-                              height="6"
-                              rx="3"
-                              fill="#D8C612"
-                            />
-                            <rect
-                              width="157.991"
-                              height="6"
-                              rx="3"
-                              fill="#781901"
-                            />
-                          </svg> */}
                           <div className="w-full h-1 bg-red-600 "></div>
                           <div className="w-full h-1 bg-[#781901]"></div>
                         </div>
@@ -296,7 +209,12 @@ const Activities = () => {
                           </p>
                         </div>
 
-                        <button className="border-none bg-transparent text-[#0747A6] text-base font-Avenir font-extrabold">
+                        <button
+                          className="border-none bg-transparent text-[#0747A6] text-base font-Avenir font-extrabold"
+                          onClick={() =>
+                            navigate('/destination-tracking/view-in-map')
+                          }
+                        >
                           More Insights
                         </button>
 
@@ -328,9 +246,11 @@ const Activities = () => {
                                 <span className="font-extrabold">12</span>{' '}
                                 Trucks on routes to Sokoto
                               </p>
-                              <p className="font-Avenir font-normal text-sm text-[#464646]">
-                                Click card for more details
-                              </p>
+                              <Link to={'/destination-tracking/view-in-map'}>
+                                <p className="font-Avenir font-normal text-sm text-[#464646]">
+                                  Click card for more details
+                                </p>
+                              </Link>
                             </div>
 
                             <div>
@@ -409,9 +329,13 @@ const Activities = () => {
                           </div>
                         </div>
                         <div className="w-full flex justify-end items-center">
-                          {' '}
-                          <button className="border-none bg-transparent underline text-[#0747A6] text-base font-Avenir font-extrabold">
-                            More Insights
+                          <button
+                            className="border-none bg-transparent underline text-[#0747A6] text-base font-Avenir font-extrabold"
+                            onClick={() =>
+                              navigate('/destination-tracking/view-in-map')
+                            }
+                          >
+                            View more details
                           </button>
                         </div>
                       </div>

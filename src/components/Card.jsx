@@ -1,9 +1,14 @@
-import React from "react";
-import { DownwardIcon, UpwardIcon } from "../icons/Icons";
+import React from 'react';
+import { DownwardIcon, UpwardIcon } from '../icons/Icons';
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({ title, subtext, value, percentage, up }) => {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center justify-center p-4 border border-[#deebff] rounded bg-[#ffffff] gap-14 hover:border-none hover:bg-[#DEEBFF]">
+    <div
+      className="flex flex-col items-center justify-center p-4 border border-[#deebff] rounded bg-[#ffffff] gap-14 hover:border-none hover:bg-[#DEEBFF]"
+      onClick={() => navigate('/tables')}
+    >
       <div className="flex flex-col justify-start items-start w-full">
         <h1 class="font-Dmsans font-bold text-xl text-[#000000]">{title}</h1>
         <p class="font-Dmsans font-normal text-sm text-[#000000]">{subtext}</p>
@@ -13,7 +18,7 @@ const Card = ({ title, subtext, value, percentage, up }) => {
         <div className="flex items-center justify-start gap-2">
           <p
             className={`font-medium text-xl ${
-              up ? "text-[#006644]" : "text-[#BF2600]"
+              up ? 'text-[#006644]' : 'text-[#BF2600]'
             }`}
           >
             {percentage}

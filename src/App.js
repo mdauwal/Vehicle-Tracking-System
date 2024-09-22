@@ -18,16 +18,14 @@ function App() {
   return (
     <IncidenceProvider>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route element={<Layout />}>
-          <Route path="/" element={<Dashboard />} />
+          {/*  <Route path="/" element={<Dashboard />} /> */}
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/succesful-shipments" element={<SuccesfulShipments />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/activities" element={<Activities />} />
-          <Route path="/decisions" element={<Decision />} />
-          <Route
-            path="/destination-tracking"
-            element={<DestinationTracking />}
-          />
+          <Route path="/tables" element={<DestinationTracking />} />
+          <Route path="/destination-tracking" element={<Decision />} />
           <Route
             path="/destination-tracking/search-results"
             element={<SearchResults />}
