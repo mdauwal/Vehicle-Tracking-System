@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { Link } from 'react-router-dom';
 
-function MapComponent({ onLocationSelected = () => { } }) {
+function MapComponent({ onLocationSelected = () => {} }) {
   const mapRef = useRef(null);
   const [selectedCoordinates, setSelectedCoordinates] = useState(null);
   const [copyIcon, setCopyIcon] = useState(<FileCopyIcon />);
@@ -67,7 +67,7 @@ function MapComponent({ onLocationSelected = () => { } }) {
       <div id="map"></div>
 
       <Link
-        to="/decisions"
+        to="/destination-tracking"
         className="absolute top-5 right-2 bg-white text-blue-600 py-2 px-4 rounded-full font-bold shadow-lg z-[1000]"
       >
         Back to Search Route
