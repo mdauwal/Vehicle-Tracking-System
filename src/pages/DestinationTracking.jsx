@@ -18,14 +18,15 @@ const generateDummyData = () => {
         "Kaduna",
         "Gboko",
     ];
-
+    const generateDriverId = (i) =>
+        `DRV${i}-${Math.floor(Math.random() * 10000)}`;
     for (let i = 1; i <= 60; i++) {
         data.push({
             id: i,
             truckPlate: `TRK${i} - ${Math.floor(Math.random() * 100)}`,
             departure: cities[Math.floor(Math.random() * cities.length)],
             destination: cities[Math.floor(Math.random() * cities.length)],
-            driver: `Driver ${i}`,
+            driver: `Driver ${generateDriverId(i)}`,
             date: `${Math.floor(Math.random() * 30) + 1}th Nov, 2021`,
             status: statuses[Math.floor(Math.random() * statuses.length)],
         });
@@ -136,7 +137,7 @@ const App = () => {
         <div className="px-5 md:px-8 lg:px-12 py-6">
             <Link
                 to="/"
-                className="flex gap-2 mt-5 cursor-pointer font-Aveni text-[18px]"
+                className="flex gap-2 mt-1 cursor-pointer font-Aveni text-[18px]"
             >
                 <FaArrowLeft className="mt-1" />
                 Back
@@ -151,7 +152,7 @@ const App = () => {
                             Showing the updated data in the last 30 days
                         </p>
                     </div>
-                    <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-0 items-center">
+                    <div className="flex flex-col gap-3 sm:flex-row space-y-4 sm:space-y-0 sm:space-x-0 items-center">
                         <div className="relative flex items-center flex-1 w-full">
                             <span className="absolute left-3 text-gray-400">
                                 <CiFilter className="h-5 w-5" />
@@ -176,7 +177,7 @@ const App = () => {
                                 placeholder="Quick Search"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="pl-10 pr-4 py-2 border border-gray-300 w-full flex-1 md:mr-5"
+                                className="pl-10 pr-4 py-2 border border-gray-300 w-full flex-1 "
                             />
                         </div>
                         <button
@@ -262,10 +263,10 @@ const App = () => {
                                         </td>
                                         <td className="px-4 py-2">
                                             <span
-                                                className={`inline-block px-2 py-1 rounded-md ${
+                                                className={`inline-block px-3 py-1 rounded-[16px] ${
                                                     shipment.status ===
                                                     "SUCCESSFUL"
-                                                        ? "bg-green-200 text-green-800"
+                                                        ? " bg-[#ABF5D1] text-[#006644]"
                                                         : "bg-red-200 text-red-800"
                                                 }`}
                                             >
@@ -327,7 +328,10 @@ const App = () => {
             </div>
             {/* // Export Modal */}
             {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+                    onClick={() => setIsModalOpen(false)}
+                >
                     <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/3">
                         <h2 className="text-2xl font-bold mb-4">Export Data</h2>
                         <p className="mb-4">
