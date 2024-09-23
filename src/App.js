@@ -31,6 +31,10 @@ function App() {
             element={<SearchResults />}
           />
           <Route
+            path="/destination-tracking/search-results/view-in-map"
+            element={<ViewInMap />}
+          />
+          <Route
             path="/destination-tracking/view-in-map"
             element={<ViewInMap />}
           />

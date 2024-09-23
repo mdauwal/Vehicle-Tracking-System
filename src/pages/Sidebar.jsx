@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Truck from '../data/Truck.png';
 import greenFlag from '../data/greenFlag.png';
@@ -47,7 +47,7 @@ const Sidebar = () => {
           </div>
 
           <div className="flex justify-end">
-            <Link to="/" className="text-blue-600 font-semibold mt-2 underline">
+            <Link to="view-in-map" className="text-blue-600 font-semibold mt-2 underline">
               View in Map
             </Link>
           </div>
