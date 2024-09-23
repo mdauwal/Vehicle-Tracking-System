@@ -112,15 +112,15 @@ const Sidebar = () => {
             <span className="bg-gradient-to-r from-red-300 to-yellow-500 px-1 p-0.5 text-sm text-black font-bold">
               Abuja
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-gradient-to-r from-yellow-500 to-red-500 px-1 p-0.5  font-bold text-sm text-black">
               Kaduna
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-[#FF0000] p-0.5 px-1 font-bold text-sm text-black">
               Gusau
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-[#FF0000] p-0.5 px-1 font-bold text-sm text-black">
               Sokoto
             </span>
@@ -140,15 +140,15 @@ const Sidebar = () => {
             <span className="bg-gradient-to-r from-yellow-500 to-red-400 px-1 p-0.5 text-sm text-black font-bold">
               Abuja
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-yellow-500 p-0.5 text-sm text-black font-bold">
               Minna
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-yellow-500 p-0.5 text-sm font-bold text-black">
               Nasarawa
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-[#FF0000] p-0.5 text-sm text-black font-bold">
               Sokoto
             </span>
@@ -158,9 +158,10 @@ const Sidebar = () => {
         {/* Trucks Section */}
         <div className="p-3 border border-gray-400 rounded mb-4">
           <div className="flex flex-1">
-            <div className="bg-[#9DBDFF] p-2 rounded-full">
-              <img src={Truck} alt="Route 2" />
-            </div>
+          <div className="bg-[#9DBDFF] p-2 rounded-full flex items-center justify-center">
+  <img src={Truck} alt="Route 2" />
+</div>
+
             <div className="ml-2">
               <p className="text-gray-500 text-xs">
                 12 Trucks on similar routes
