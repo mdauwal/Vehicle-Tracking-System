@@ -1,19 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-const flowbite = require("flowbite-react/tailwind");
+const flowbite = require('flowbite-react/tailwind');
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", flowbite.content()],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', flowbite.content()],
   theme: {
     extend: {
       fontFamily: {
-        Avenir: ["Avenir"],
-        CircularSTD: ["CircularSTD"],
-        DMsans: ["DMsans"],
+        Avenir: ['Avenir'],
+        CircularSTD: ['CircularSTD'],
+        DMsans: ['DMsans'],
       },
     },
   },
-  plugins: [require("daisyui"), flowbite.content()],
+  plugins: [require('daisyui'), flowbite.content()],
   daisyui: {
     themes: false,
-    darkTheme: "light",
+    darkTheme: 'light',
   },
 };

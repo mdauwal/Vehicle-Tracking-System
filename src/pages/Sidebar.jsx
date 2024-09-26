@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Truck from '../data/Truck.png';
 import greenFlag from '../data/greenFlag.png';
@@ -6,38 +6,38 @@ import redFlag from '../data/redFlag.png';
 import yellowFlag from '../data/yellowFlag.png';
 
 const Sidebar = () => {
-  const now = new Date().toLocaleTimeString();
+  // const now = new Date().toLocaleTimeString();
 
-  const [time, setTime] = useState(now);
+  // const [time, setTime] = useState(now);
 
-  function updateTime() {
-    const newTime = new Date().toLocaleTimeString();
-    setTime(newTime);
-  }
+  // function updateTime() {
+  //   const newTime = new Date().toLocaleTimeString();
+  //   setTime(newTime);
+  // }
 
-  setInterval(() => {
-    setTime(updateTime);
-  }, 1000);
+  // setInterval(() => {
+  //   setTime(updateTime);
+  // }, 1000);
 
   return (
     <div className="overflow-y-auto p-4 bg-white shadow-lg">
       <div className="mb-4">
         <div className="flex flex-1 gap-10px">
-          <h2 className="font-semibold text-lg mb-4">Search Result</h2>
-          <h4 className="font-semibold text-lg ml-20 mb-4 border-2 rounded border-blue-600 px-1">
+          <h2 className="font-semibold font-Avenir text-lg mb-4 mr-11">Search Result</h2>
+          {/* <span className="bg-white text-blue-600 ml-11 p-1 font-semibold  shadow-lg z-[1000]">
             {time}
-          </h4>
+          </span> */}
         </div>
 
         <div className="p-4 border border-blue-500 rounded mb-4">
-          <h3 className="font-semibold text-gray-800">Sokoto's Status</h3>
+          <h3 className="font-semibold font-Avenir text-gray-800">Sokoto's Status</h3>
           <hr className="my-2 border-blue-300" />
           <div className="flex justify-between">
             <span>History Shari’a</span>
             <span className="font-semibold">Yes</span>
           </div>
           <div className="flex justify-between">
-            <span>Risk Level</span>
+            <span className="mr-5">Risk Level</span>
             <div className="bg-[#FF0000] h-5 w-1/6 ml-14 mr-0"></div>
             <span className="font-semibold">High</span>
           </div>
@@ -47,7 +47,7 @@ const Sidebar = () => {
           </div>
 
           <div className="flex justify-end">
-            <Link to="/" className="text-blue-600 font-semibold mt-2 underline">
+            <Link to="view-in-map" className="text-blue-600 font-semibold mt-2 underline">
               View in Map
             </Link>
           </div>
@@ -67,33 +67,33 @@ const Sidebar = () => {
             <span className="w-5 h-5 bg-[#FFAF00] text-white rounded-full flex justify-center items-center">
               5
             </span>
-            <p className="ml-2 text-sm">Five States through to Sokoto</p>
+            <p className="ml-2 text-sm font-Avenir">Five States through to Sokoto</p>
             <input type="checkbox" className="ml-auto" defaultChecked />
           </div>
           <div className="flex items-center mb-2">
             <div className="w-5 h-5 bg-green-500 text-white rounded-full flex justify-center items-center">
               4
             </div>
-            <p className="ml-2 text-sm">Four major federal roads</p>
+            <p className="ml-2 text-sm font-Avenir">Four major federal roads</p>
             <input type="checkbox" className="ml-auto" defaultChecked />
           </div>
           <div className="flex items-center mb-2">
             <div className="w-5 h-5 bg-purple-500 text-white rounded-full flex justify-center items-center">
               4
             </div>
-            <p className="ml-2 text-sm">Four states roads</p>
+            <p className="ml-2 text-sm font-Avenir">Four states roads</p>
             <input type="checkbox" className="ml-auto" defaultChecked />
           </div>
         </div>
         <div>
-          <h6 className="text-sm text-blue-600 mb-3">More Insights</h6>
+          <h6 className="text-sm text-blue-600 mb-3 font-Avenir">More Insights</h6>
           <Link
             to="/More"
             className="text-blue-600 font-bold mb-3 inline-block"
           >
             More Insights
           </Link>
-          <p className="text-sm mb-2">
+          <p className="text-sm mb-2 font-Avenir">
             See possible routes, federal and state roads, and other route
             disruptions
           </p>
@@ -112,15 +112,15 @@ const Sidebar = () => {
             <span className="bg-gradient-to-r from-red-300 to-yellow-500 px-1 p-0.5 text-sm text-black font-bold">
               Abuja
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-gradient-to-r from-yellow-500 to-red-500 px-1 p-0.5  font-bold text-sm text-black">
               Kaduna
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-[#FF0000] p-0.5 px-1 font-bold text-sm text-black">
               Gusau
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-[#FF0000] p-0.5 px-1 font-bold text-sm text-black">
               Sokoto
             </span>
@@ -140,15 +140,15 @@ const Sidebar = () => {
             <span className="bg-gradient-to-r from-yellow-500 to-red-400 px-1 p-0.5 text-sm text-black font-bold">
               Abuja
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-yellow-500 p-0.5 text-sm text-black font-bold">
               Minna
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-yellow-500 p-0.5 text-sm font-bold text-black">
               Nasarawa
             </span>
-            <span className="mx-1 text-xs">--</span>
+            <span className="mx-1">-</span>
             <span className="bg-[#FF0000] p-0.5 text-sm text-black font-bold">
               Sokoto
             </span>
@@ -158,9 +158,10 @@ const Sidebar = () => {
         {/* Trucks Section */}
         <div className="p-3 border border-gray-400 rounded mb-4">
           <div className="flex flex-1">
-            <div className="bg-[#9DBDFF] p-2 rounded-full">
-              <img src={Truck} alt="Route 2" />
-            </div>
+          <div className="bg-[#9DBDFF] p-2 rounded-full flex items-center justify-center">
+  <img src={Truck} alt="Route 2" />
+</div>
+
             <div className="ml-2">
               <p className="text-gray-500 text-xs">
                 12 Trucks on similar routes
